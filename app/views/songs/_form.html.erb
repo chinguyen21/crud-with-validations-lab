@@ -1,0 +1,31 @@
+<h5>
+<%= form_for(@song) do |f| %>
+  <% if @song.errors.any? %>
+    <ul>
+    <% @song.errors.full_messages.each do |message| %>
+      <h3 id="error"><%= message %></h3>
+    <% end %>
+    </ul>
+  <% end %>
+
+
+  <label id="label">Title </label><br>
+  <%= f.text_field :title %><br><br>
+
+  <label id="label">Released </label>
+  <%= f.check_box :released, {}, checked = 'true', 'false'%><br><br>
+
+  <label id="label">Release year</label><br>
+  <%= f.number_field :release_year %><br>
+
+  <label id="label">Artist Name</label><br>
+  <%= f.text_field :artist_name, size: "30*2" %><br><br>
+
+  <label id="label">Genre</label><br>
+  <%= f.text_field :genre, size: "30*2" %><br><br>
+
+
+  <%= f.submit %>
+<% end %>
+
+</h5>
