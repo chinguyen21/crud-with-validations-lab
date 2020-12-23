@@ -12,5 +12,4 @@ class Song < ApplicationRecord
   end
 
 
-  Song.where
 end
